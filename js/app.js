@@ -40,11 +40,11 @@ form.addEventListener('submit', function(e) {
     // age = e.target.age.value;
     amount = e.target.amount.value;
     save();
-    getData();
-    new Donate(donerName, age, amount).render();
 
-    // location.reload();
-})
+    new Donate(donerName, age, amount).render();
+    getData();
+
+});
 
 
 
@@ -67,7 +67,7 @@ headRow();
 Donate.prototype.render = function() {
 
     let tr2 = document.createElement('tr');
-    table.appendChild(tr2)
+    table.appendChild(tr2);
 
     td = document.createElement('td');
     tr2.appendChild(td);
@@ -83,9 +83,10 @@ Donate.prototype.render = function() {
     tr2.appendChild(td);
     td.textContent = this.amount;
     save();
+    getData();
     // location.reload();
 
-}
+};
 
 
 function callRender() {
